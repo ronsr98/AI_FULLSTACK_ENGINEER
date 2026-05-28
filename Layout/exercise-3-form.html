@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout - Exercise 3 (Form)</title>
+<style>
+  * { box-sizing: border-box; }
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;                 /* center the card on the page */
+    align-items:center;
+    justify-content:center;
+    padding:40px;
+    background:linear-gradient(135deg,#6173d8,#8a59c4);
+    font-family:"Segoe UI",Helvetica,Arial,sans-serif;
+    color:#2b2b2b;
+  }
+
+  .card{
+    width:100%;
+    max-width:700px;
+    background:#ffffff;
+    border-radius:18px;
+    box-shadow:0 25px 60px -20px rgba(0,0,0,.4);
+    padding:40px;
+  }
+
+  h1{ text-align:center; font-size:2.1rem; margin:0 0 4px; }
+  .subtitle{ text-align:center; color:#777777; margin:0 0 28px; }
+
+  /* a field = label stacked above its input (flex column) */
+  .field{ display:flex; flex-direction:column; margin-bottom:20px; }
+  .field > label{ font-weight:700; margin-bottom:7px; color:#3a3a3a; }
+
+  /* a row = two fields side by side, each taking equal width */
+  .row{ display:flex; gap:20px; }
+  .row .field{ flex:1; }
+
+  input, select, textarea{
+    font:inherit;
+    padding:11px 12px;
+    border:1px solid #c9c9c9;
+    border-radius:8px;
+    background:#ffffff;
+    color:#2b2b2b;
+  }
+  input:focus, select:focus, textarea:focus{
+    outline:none; border-color:#6173d8; box-shadow:0 0 0 3px rgba(97,115,216,.18);
+  }
+  textarea{ min-height:90px; resize:vertical; font-family:ui-monospace,Menlo,monospace; }
+
+  /* checkbox row, laid out horizontally with flexbox */
+  .checks{ display:flex; gap:26px; align-items:center; }
+  .chk{ display:flex; align-items:center; gap:8px; font-weight:700; }
+  .chk input{ width:18px; height:18px; }
+
+  /* button row: pushed to opposite ends */
+  .actions{ display:flex; justify-content:space-between; margin-top:8px; }
+  button{ font:inherit; font-weight:700; padding:12px 22px; border-radius:8px; cursor:pointer; }
+  .btn-secondary{ background:#eeeeee; border:1px solid #cccccc; color:#555555; }
+  .btn-primary{
+    border:none; color:#ffffff;
+    background:linear-gradient(135deg,#4f9fe8,#56cfe6);
+  }
+</style>
+</head>
+<body>
+  <form class="card" onsubmit="return false">
+    <h1>Contact Form</h1>
+    <p class="subtitle">Get in touch with us</p>
+
+    <div class="row">
+      <div class="field"><label>First Name</label><input type="text"></div>
+      <div class="field"><label>Last Name</label><input type="text"></div>
+    </div>
+
+    <div class="field"><label>Email Address</label><input type="email"></div>
+
+    <div class="row">
+      <div class="field">
+        <label>Subject</label>
+        <select><option>Select a topic</option><option>Sales</option><option>Support</option></select>
+      </div>
+      <div class="field">
+        <label>Priority</label>
+        <select><option>Low</option><option>Medium</option><option>High</option></select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Message</label>
+      <textarea placeholder="Tell us how we can help..."></textarea>
+    </div>
+
+    <div class="field">
+      <label>Contact Preferences</label>
+      <div class="checks">
+        <label class="chk"><input type="checkbox"> Email Updates</label>
+        <label class="chk"><input type="checkbox"> Phone Follow-up</label>
+        <label class="chk"><input type="checkbox"> Newsletter</label>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn-secondary">Save Draft</button>
+      <button type="button" class="btn-primary">Send Message</button>
+    </div>
+  </form>
+</body>
+</html>

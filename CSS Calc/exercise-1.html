@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 1 - CSS calc()</title>
+  <style>
+    /* The container spans the full width of the page */
+    .container {
+      width: 100%;
+      height: 130px;
+    }
+
+    /* Make sure borders are included inside the width so the
+       two sections add up to exactly 100% with no overflow */
+    .container .section {
+      height: 100%;
+      box-sizing: border-box;
+      float: left; /* place the two sections side by side */
+    }
+
+    /* The RIGHT section has a FIXED width of 20px */
+    .right {
+      width: 20px;
+      background-color: #e8736f;
+    }
+
+    /* The LEFT section takes the REST of the space.
+       100% of the container MINUS the 20px taken by the right section.
+       This is exactly what calc() is for: mixing % with px. */
+    .left {
+      width: calc(100% - 20px);
+      background-color: #f9b6bb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="section left"></div>
+    <div class="section right"></div>
+  </div>
+</body>
+</html>

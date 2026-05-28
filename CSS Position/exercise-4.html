@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positioning - Exercise 4</title>
+  <style>
+    /* The full red rounded rectangle = the body of the magnet.
+       It's the parent / frame of reference for the pieces inside. */
+    .red-background {
+      position: relative;
+      width: 340px;
+      height: 220px;
+      background-color: #d6352b;
+      border-radius: 16px;
+    }
+
+    /* The white "notch" cut from the top-center turns the red block
+       into a U shape. Only its BOTTOM corners are rounded, so the inside
+       of the U is curved while the top stays flush with the edge.
+       Centered: the two red prongs are (340 - 150) / 2 = 95px each. */
+    .white-space {
+      position: absolute;
+      top: 0;
+      left: 95px;
+      width: 150px;
+      height: 150px;
+      background-color: #ffffff;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+    }
+
+    /* The two silver tips sit on top of each red prong.
+       Each rounds only its OUTER top corner to match the red body. */
+    .silver-edges {
+      position: absolute;
+      top: 0;
+      width: 95px;
+      height: 50px;
+      background-color: #b9bcc0;
+    }
+    #edge-1 { left: 0;  border-top-left-radius: 16px;  }   /* left prong  */
+    #edge-2 { right: 0; border-top-right-radius: 16px; }   /* right prong */
+  </style>
+</head>
+<body>
+  <div class="red-background">
+    <div class="silver-edges" id="edge-1"></div>
+    <div class="silver-edges" id="edge-2"></div>
+    <div class="white-space"></div>
+  </div>
+</body>
+</html>

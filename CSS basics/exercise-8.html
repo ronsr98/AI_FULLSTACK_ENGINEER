@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 8</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f3ef;
+      color: #2b2b2b;
+      line-height: 1.6;
+    }
+
+    /* each part is a centered card */
+    .card {
+      width: 700px;
+      margin: 25px auto;
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color: #2d6a4f;
+    }
+
+    /* 1. About me - round avatar */
+    .avatar {
+      width: 90px;
+      height: 90px;
+      background-color: #2d6a4f;
+      color: #ffffff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 90px;
+      font-size: 30px;
+      margin: 0 auto 15px auto;
+    }
+
+    .about-text {
+      text-align: center;
+    }
+
+    /* 2. Favorite things - tags shown side by side with inline-block */
+    .tag {
+      display: inline-block;
+      background-color: #d8f3dc;
+      padding: 12px 16px;
+      margin: 5px;
+      border-radius: 10px;
+    }
+
+    .tag small {
+      color: #6c8a78;
+    }
+
+    /* 3. Projects */
+    .project {
+      border: 1px solid #e6e2da;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 15px;
+    }
+
+    .project h3 {
+      margin: 5px 0;
+    }
+
+    .label {
+      display: inline-block;
+      background-color: #d8f3dc;
+      color: #2d6a4f;
+      font-size: 13px;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* 4. Table */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #eeeeee;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #2d6a4f;
+      color: #ffffff;
+    }
+
+    /* 5. Contact form */
+    label {
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+
+    input, textarea {
+      display: block;
+      padding: 10px;
+      border: 2px solid #e6e2da;
+      border-radius: 8px;
+      font-family: Roboto, sans-serif;
+    }
+
+    button {
+      display: block;
+      margin-top: 18px;
+      background-color: #2d6a4f;
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. About Me -->
+  <div class="card">
+    <h2>About Me</h2>
+    <div class="avatar">RS</div>
+    <p class="about-text">
+      Hi, I'm Ron Sukner. I'm a master's student in Mathematics at Bar-Ilan
+      University, originally from Hadera. When I'm not working on proofs, you'll
+      usually find me on the basketball court, out on a hiking trail, or planning
+      my next trip somewhere new around the world.
+    </p>
+  </div>
+
+  <!-- 2. Favorite Things -->
+  <div class="card">
+    <h2>A Few of My Favorite Things</h2>
+    <span class="tag">Music <br><small>Rock &amp; rap - Linkin Park</small></span>
+    <span class="tag">Movies <br><small>Action, thriller &amp; comedy - Silent Hill</small></span>
+    <span class="tag">Food <br><small>A foodie - meat of all kinds</small></span>
+    <span class="tag">Books <br><small>Psychology, self-improvement &amp; stocks</small></span>
+    <span class="tag">Chess <br><small>My way to unwind</small></span>
+    <span class="tag">Basketball <br><small>On the court when I can</small></span>
+    <span class="tag">Hiking <br><small>Trails over treadmills</small></span>
+    <span class="tag">Traveling <br><small>The next destination</small></span>
+  </div>
+
+  <!-- 3. Projects -->
+  <div class="card">
+    <h2>My Projects</h2>
+    <div class="project">
+      <span class="label">Java - Mobile</span>
+      <h3>Icy Tower</h3>
+      <p>A mobile version of the classic arcade game Icy Tower, built from scratch
+      in Java for Android phones.</p>
+    </div>
+    <div class="project">
+      <span class="label">Python - Computer Vision</span>
+      <h3>Face Recognition</h3>
+      <p>A face recognition system written in Python that detects faces in images
+      and identifies who they belong to.</p>
+    </div>
+  </div>
+
+  <!-- 4. Table -->
+  <div class="card">
+    <h2>My Weekly Schedule</h2>
+    <table>
+      <tr><th>Day</th><th>Morning</th><th>Evening</th></tr>
+      <tr><td>Monday</td><td>Lectures</td><td>Basketball</td></tr>
+      <tr><td>Tuesday</td><td>Research</td><td>Chess</td></tr>
+      <tr><td>Wednesday</td><td>Lectures</td><td>Gym</td></tr>
+    </table>
+  </div>
+
+  <!-- 5. Contact Form -->
+  <div class="card">
+    <h2>Get in Touch</h2>
+    <label>Name</label>
+    <input type="text" value="Ron Sukner">
+
+    <label>Email</label>
+    <input type="email" value="ronsr98@gmail.com">
+
+    <label>Message</label>
+    <textarea rows="4">Thank you, and I hope we'll enjoy the course together!</textarea>
+
+    <button>Send Message</button>
+  </div>
+
+</body>
+</html>

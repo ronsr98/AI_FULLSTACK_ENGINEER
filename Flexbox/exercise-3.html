@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox - Exercise 3</title>
+  <style>
+    body { font-family: Georgia, "Times New Roman", serif; margin: 20px; }
+
+    /* Outer flex row split into two equal columns. */
+    .wrapper {
+      display: flex;
+      border: 1px solid #cccccc;
+      height: 600px;
+    }
+
+    /* flex: 1 on both  ->  each column takes half the width. */
+    .left, .right { flex: 1; }
+
+    /* The divider line between the two columns. */
+    .left { border-right: 1px solid #cccccc; }
+
+    /* Center the circle both horizontally and vertically. */
+    .left {
+      display: flex;
+      align-items: center;       /* vertical   */
+      justify-content: center;   /* horizontal */
+    }
+
+    .circle {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;        /* makes a square into a circle */
+      background-color: #6f94e6;
+    }
+
+    /* Center the paragraph vertically; keep the text left-aligned. */
+    .right {
+      display: flex;
+      align-items: center;       /* vertical centering */
+      padding: 0 50px;
+    }
+    .right p { margin: 0; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="left">
+      <div class="circle"></div>
+    </div>
+    <div class="right">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+      mollit anim id est laborum.</p>
+    </div>
+  </div>
+</body>
+</html>

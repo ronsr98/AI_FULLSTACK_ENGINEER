@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox - Exercise 6</title>
+  <style>
+    body { font-family: Georgia, "Times New Roman", serif; margin: 20px; }
+
+    /* Outer flex COLUMN: a big main area on top, a footer at the bottom. */
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      border: 3px solid #e18683;
+      height: 700px;
+    }
+
+    /* Main area: takes all remaining height and centers its content
+       (circle + paragraph) both vertically and horizontally. */
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;       /* horizontal centering */
+      justify-content: center;   /* vertical centering    */
+      gap: 28px;
+      padding: 20px;
+    }
+
+    .circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #e18683;
+    }
+
+    .main p {
+      margin: 0;
+      max-width: 720px;
+      text-align: center;        /* the paragraph is centered */
+    }
+
+    /* Footer: one bar on the left, three bars on the right.
+       justify-content: space-between pushes the two groups apart. */
+    .footer {
+      border-top: 3px solid #e18683;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px;
+    }
+
+    /* The right side groups its three bars together. */
+    .right-group { display: flex; gap: 14px; }
+
+    .bar {
+      background-color: #e18683;
+      height: 18px;
+      width: 95px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="main">
+      <div class="circle"></div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="footer">
+      <div class="left-group">
+        <div class="bar"></div>
+      </div>
+      <div class="right-group">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

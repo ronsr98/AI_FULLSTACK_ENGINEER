@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me</title>
+</head>
+<body>
+  <h1>Contact Ron Sukner</h1>
+  <p>Fill out the form below and I will get back to you.</p>
+
+  <form>
+    <fieldset>
+      <legend>Your Details</legend>
+
+      <p>
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+      </p>
+
+      <p>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </p>
+
+      <p>
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone" placeholder="050-000-0000">
+      </p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your Message</legend>
+
+      <p>
+        <label for="topic">Topic:</label><br>
+        <select id="topic" name="topic">
+          <option value="general">General question</option>
+          <option value="project">About a project</option>
+          <option value="study">Math / studies</option>
+          <option value="other">Other</option>
+        </select>
+      </p>
+
+      <p>
+        Preferred way to reply:<br>
+        <input type="radio" id="byemail" name="reply" value="email" checked>
+        <label for="byemail">By email</label>
+        <input type="radio" id="byphone" name="reply" value="phone">
+        <label for="byphone">By phone</label>
+      </p>
+
+      <p>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      </p>
+
+      <p>
+        <input type="checkbox" id="subscribe" name="subscribe">
+        <label for="subscribe">Send me updates about the course</label>
+      </p>
+    </fieldset>
+
+    <p>
+      <input type="submit" value="Send">
+      <input type="reset" value="Clear">
+    </p>
+  </form>
+</body>
+</html>

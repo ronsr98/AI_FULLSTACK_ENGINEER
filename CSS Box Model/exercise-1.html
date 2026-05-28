@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Box Model</title>
+  <style>
+    .box {
+      /* The element's CONTENT area: 100 x 100 pixels.
+         This is the inner-most layer of the box model. */
+      width: 100px;
+      height: 100px;
+
+      background-color: #ff0000;
+
+      /* MARGIN: empty space OUTSIDE the box that pushes it
+         away from other elements (and from the top of the page).
+         In DevTools you'll see this as the outer-most layer. */
+      margin-top: 100px;
+
+      /* PADDING: empty space INSIDE the box, between the content
+         and the border. It makes the red area look bigger because
+         the background also fills the padding.
+         In DevTools this is the layer just around the content. */
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!--
+    HOW TO DO THE ASSIGNMENT:
+    1. Open this file in Chrome.
+    2. Right-click the red box  ->  "Inspect".
+    3. In DevTools: Elements tab  ->  Styles tab  ->  scroll down
+       until you see the Box Model diagram (the nested boxes).
+    4. Notice the "100 x 100" in the middle  =  your content size.
+    5. Hover over each layer in the diagram (content / padding /
+       border / margin) and watch which part lights up on the page.
+    6. Try changing margin-top and padding above and re-inspect to
+       see the diagram update.
+  -->
+  <div class="box"></div>
+</body>
+</html>

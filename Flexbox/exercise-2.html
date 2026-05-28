@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox - Exercise 2</title>
+  <style>
+    body { font-family: Georgia, "Times New Roman", serif; margin: 20px; }
+
+    /* A flex row. The boxes inside it will share the width. */
+    .container {
+      display: flex;
+      gap: 8px;
+      border: 1px solid #cccccc;
+      padding: 8px;
+      margin-bottom: 28px;
+    }
+
+    .box {
+      background-color: #6f94e6;
+      height: 80px;
+      color: #14224d;
+      padding: 4px 6px;
+
+      /* flex-basis: 0 means "ignore content width, start everyone from 0",
+         so the final widths are EXACTLY proportional to flex-grow. */
+      flex-basis: 0;
+      /* flex-grow: how much of the free space this box takes.
+         Equal grow on every box  ->  4 evenly distributed boxes. */
+      flex-grow: 1;
+    }
+
+    /* For the second row: boxes 2 and 3 grow twice as much  ->  twice as big. */
+    .big { flex-grow: 2; }
+  </style>
+</head>
+<body>
+  <h3>4 boxes evenly distributed:</h3>
+  <div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+
+  <h3>2 boxes (2 and 3) are twice as big as the first</h3>
+  <div class="container">
+    <div class="box">1</div>
+    <div class="box big">2</div>
+    <div class="box big">3</div>
+  </div>
+</body>
+</html>

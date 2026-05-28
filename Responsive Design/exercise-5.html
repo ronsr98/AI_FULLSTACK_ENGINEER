@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive - Exercise 5 (Product Card)</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #6d7ce0, #8257c5);
+    }
+
+    .card {
+      width: 100%;
+      max-width: 900px;
+      background: #ffffff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px -20px rgba(0,0,0,.45);
+      /* Mobile-first (small, < 600px): stacked & centered */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .media {
+      background: linear-gradient(135deg, #6173d8, #8a59c4);
+      min-height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.18);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .icon svg { width: 46px; height: 46px; fill: rgba(255,255,255,.9); }
+
+    .content { padding: 2rem; text-align: center; }
+    .content h2 { margin: 0 0 1rem; color: #1f2937; font-size: 1.6rem; }
+    .content .desc { margin: 0 0 1.5rem; color: #6b7280; line-height: 1.6; }
+
+    .row { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .price { color: #e2543d; font-weight: bold; font-size: 1.8rem; }
+    .btn {
+      width: 100%; text-align: center;
+      border: none; cursor: pointer;
+      padding: 0.85rem 1.6rem; border-radius: 10px;
+      color: #ffffff; font-weight: bold; font-size: 1rem;
+      background: linear-gradient(135deg, #6173d8, #8a59c4);
+    }
+
+    /* Medium (600px - 900px): content aligns left, price & button on one row */
+    @media (min-width: 600px) {
+      .content { text-align: left; }
+      .content h2 { font-size: 1.9rem; }
+      .row { flex-direction: row; justify-content: space-between; align-items: center; }
+      .btn { width: auto; }
+    }
+
+    /* Large (> 900px): image on the left, content on the right */
+    @media (min-width: 900px) {
+      .card { flex-direction: row; }
+      .media { flex: 0 0 42%; min-height: auto; }
+      .content { flex: 1; padding: 2.5rem; }
+      .content h2 { font-size: 2.3rem; }
+      .price { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="media">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M9 3l-1.8 2H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.2L15 3H9zm3 5a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
+      </div>
+    </div>
+    <div class="content">
+      <h2>Premium Laptop</h2>
+      <p class="desc">High-performance laptop perfect for developers and designers.
+      Features the latest processor, ample RAM, and a stunning display that brings
+      your work to life.</p>
+      <div class="row">
+        <span class="price">$1,299</span>
+        <button class="btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positioning - Exercise 2</title>
+  <style>
+    /* The blue square is the PARENT.
+       position: relative turns it into the frame of reference, so the
+       two red bars inside it are positioned against ITS edges. */
+    #parent {
+      width: 250px;
+      height: 250px;
+      background-color: #0000ff;
+      position: relative;
+    }
+
+    /* Both bars are absolute -> taken out of the normal flow and placed
+       exactly where we tell them, relative to the blue parent. */
+    .child {
+      position: absolute;
+      background-color: #ff0000;
+    }
+
+    /* Vertical bar: full height, thin width, pushed in from the left. */
+    #child-1 {
+      width: 16px;
+      height: 100%;
+      top: 0;
+      left: 36px;
+    }
+
+    /* Horizontal bar: full width, thin height, pushed down from the top. */
+    #child-2 {
+      width: 100%;
+      height: 16px;
+      top: 32px;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="parent">
+    <div class="child" id="child-1"></div>
+    <div class="child" id="child-2"></div>
+  </div>
+</body>
+</html>

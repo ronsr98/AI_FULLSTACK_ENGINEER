@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive - Exercise 3 (Gallery)</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e293b, #334155);
+      color: #ffffff;
+      padding: 40px 24px;
+    }
+    h1 { text-align: center; margin: 0 0 2rem; }
+
+    .gallery {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Each tile is a link that opens the full image in a new tab */
+    .item {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 10px 24px -14px rgba(0,0,0,.6);
+      /* Mobile-first: 1 image per row */
+      width: 100%;
+    }
+    .item img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;   /* crop different aspect ratios to the same box */
+    }
+    .caption {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(0,0,0,.4);   /* slightly transparent over the image */
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;          /* changes per breakpoint below */
+    }
+
+    /* Tablet: 2 per row */
+    @media (min-width: 600px) {
+      .item { width: calc((100% - 16px) / 2); }
+      .caption { font-size: 1rem; }
+    }
+
+    /* Desktop: 3 per row (calc with the 2 gaps of 16px) */
+    @media (min-width: 900px) {
+      .item { width: calc((100% - 32px) / 3); }
+      .caption { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Gallery</h1>
+  <div class="gallery">
+    <a class="item" href="https://picsum.photos/id/1015/1600/1000" target="_blank">
+      <img src="https://picsum.photos/id/1015/600/400" alt="River">
+      <span class="caption">River</span>
+    </a>
+    <a class="item" href="https://picsum.photos/id/1025/1600/1000" target="_blank">
+      <img src="https://picsum.photos/id/1025/500/700" alt="Dog">
+      <span class="caption">Dog</span>
+    </a>
+    <a class="item" href="https://picsum.photos/id/1039/1600/1000" target="_blank">
+      <img src="https://picsum.photos/id/1039/800/500" alt="Waterfall">
+      <span class="caption">Waterfall</span>
+    </a>
+    <a class="item" href="https://picsum.photos/id/1043/1600/1000" target="_blank">
+      <img src="https://picsum.photos/id/1043/600/600" alt="City">
+      <span class="caption">City</span>
+    </a>
+    <a class="item" href="https://picsum.photos/id/1056/1600/1000" target="_blank">
+      <img src="https://picsum.photos/id/1056/700/400" alt="Road">
+      <span class="caption">Road</span>
+    </a>
+    <a class="item" href="https://picsum.photos/id/1062/1600/1000" target="_blank">
+      <img src="https://picsum.photos/id/1062/500/800" alt="Beach">
+      <span class="caption">Beach</span>
+    </a>
+  </div>
+</body>
+</html>

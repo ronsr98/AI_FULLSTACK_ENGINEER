@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive - Exercise 2</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+      color: #1f2937;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .wrap {
+      max-width: 700px;
+      background: #ffffff;
+      padding: 3rem;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px -20px rgba(0,0,0,.35);
+    }
+    h1 { color: #2563eb; margin: 0 0 1rem; }
+    p  { color: #555555; line-height: 1.6; margin: 0; }
+
+    /* Mobile-first: base = mobile (smaller than 600px) */
+    h1 { font-size: 24px; }
+    p  { font-size: 14px; }
+
+    /* Tablet: 600px - 900px */
+    @media (min-width: 600px) {
+      h1 { font-size: 36px; }
+      p  { font-size: 16px; }
+    }
+
+    /* Desktop: bigger than 900px */
+    @media (min-width: 900px) {
+      h1 { font-size: 48px; }
+      p  { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Responsive Typography</h1>
+    <p>This heading and paragraph change size based on the screen width. On mobile
+    (under 600px) the heading is 24px and the text 14px. On a tablet (600–900px)
+    they grow to 36px and 16px. On desktop (over 900px) they reach 48px and 18px.
+    Resize the window to watch the text scale across the three breakpoints.</p>
+  </div>
+</body>
+</html>

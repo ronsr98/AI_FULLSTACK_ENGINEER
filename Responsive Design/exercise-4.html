@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive - Exercise 4 (Responsive Holy Grail)</title>
+<style>
+  * { box-sizing: border-box; }
+  body{ margin:0; font-family:"Segoe UI",Helvetica,Arial,sans-serif; color:#2b2b2b; }
+
+  /* KEY TO THE STICKY FOOTER:
+     the page is a vertical flex column at least as tall as the viewport.
+     The middle row grows to fill leftover space, pushing the footer down. */
+  .page{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+  }
+
+  header{
+    background:linear-gradient(90deg,#6173d8,#8a59c4);
+    color:#ffffff;
+    padding:26px 32px;
+  }
+  header h1{ margin:0; font-size:1.7rem; font-weight:600; }
+
+  /* the three-column band. flex:1 makes it eat all spare height. */
+  .body{ display:flex; flex:1; }
+
+  /* left & right columns: fixed-ish width, don't grow or shrink */
+  .sidebar{ flex:0 0 210px; background:#f6f7f9; border-left:1px solid #ececec; padding:24px; }
+  .sidebar.left{ border-left:none; border-right:1px solid #ececec; }
+  .sidebar h2{ margin:0 0 16px; font-size:1.1rem; }
+  .sidebar nav a{ display:block; padding:10px 4px; color:#555555; text-decoration:none; }
+  .sidebar nav a:hover{ color:#6173d8; }
+
+  /* center column: flex:1 -> takes all remaining width */
+  main{ flex:1; padding:30px 36px; }
+  main h2{ margin-top:0; font-size:1.6rem; }
+  main p{ line-height:1.7; color:#444444; }
+  .feature{
+    margin-top:22px; padding:22px 24px;
+    background:#f6f7f9; border:1px solid #ececec; border-radius:12px;
+  }
+  .feature h3{ margin:0 0 8px; }
+
+  .widget{
+    background:#ffffff; border:1px solid #e4e4e4; border-radius:10px;
+    padding:16px 18px; margin-bottom:16px;
+  }
+  .widget h3{ margin:0 0 8px; font-size:1rem; }
+  .widget p{ margin:0; color:#666666; font-size:.9rem; line-height:1.6; }
+
+  footer{
+    background:#2b2f36; color:#cfd3da; text-align:center; padding:22px;
+  }
+  footer .links{ display:flex; gap:28px; justify-content:center; margin-top:10px; }
+  footer a{ color:#aab0bb; text-decoration:none; }
+  footer a:hover{ color:#ffffff; }
+
+  /* RESPONSIVE: under 600px stack everything in one column.
+     DOM order inside .body is nav -> main -> sidebar, so a column gives:
+     header -> nav -> main -> sidebar -> footer (the required order). */
+  @media (max-width:600px){
+    .body{ flex-direction:column; }
+    .sidebar{ flex:none; width:100%; border:none; border-bottom:1px solid #ececec; }
+    /* navbar menu items horizontal when stacked */
+    .sidebar.left nav{ display:flex; flex-wrap:wrap; gap:6px 18px; }
+    .sidebar.left nav a{ display:inline; padding:6px 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <header><h1>Holy Grail Layout Demo</h1></header>
+
+    <div class="body">
+      <aside class="sidebar left">
+        <h2>Navigation</h2>
+        <nav>
+          <a href="#">Home</a><a href="#">About</a><a href="#">Services</a>
+          <a href="#">Portfolio</a><a href="#">Blog</a><a href="#">Contact</a>
+        </nav>
+      </aside>
+
+      <main>
+        <h2>Welcome to the Holy Grail Layout</h2>
+        <p>This is a demonstration of the classic "Holy Grail" layout pattern
+        implemented using CSS Flexbox: a header, a footer, and three columns,
+        with the center column holding the main content and the side columns
+        holding supplementary content.</p>
+        <div class="feature">
+          <h3>Key Features</h3>
+          <p>This layout demonstrates flexible content areas, sticky footer
+          positioning, and responsive principles that adapt to screen sizes.</p>
+        </div>
+      </main>
+
+      <aside class="sidebar right">
+        <h2>Sidebar</h2>
+        <div class="widget">
+          <h3>Quick Info</h3>
+          <p>This sidebar shows how flexible content areas work in the Holy Grail layout.</p>
+        </div>
+        <div class="widget">
+          <h3>Latest News</h3>
+          <p>Sample content showing how widgets and secondary information can be displayed.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div>© 2025 Holy Grail Layout Demo. Built with CSS Flexbox.</div>
+      <div class="links">
+        <a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Support</a>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2 - CSS calc()</title>
+  <style>
+    /* The container is 40% of the page width */
+    .container {
+      width: 40%;
+      height: 130px;
+      border: 4px solid #d11d77; /* the magenta frame around everything */
+      box-sizing: border-box;
+    }
+
+    /* Each section sits next to the others and includes its
+       border inside its width (border-box) so the three
+       widths add up to exactly 100% of the container */
+    .container .section {
+      height: 100%;
+      box-sizing: border-box;
+      float: left; /* place the three sections side by side */
+      background-color: #f9b6bb;
+      border: 2px solid #000000; /* the black dividing lines */
+    }
+
+    /* 3 sections EVENLY wide:
+       split the container (100%) into 3 equal parts.
+       calc() lets us divide a percentage cleanly. */
+    .section {
+      width: calc(100% / 3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positioning - Exercise 1</title>
+  <style>
+    body { font-family: Georgia, "Times New Roman", serif; }
+
+    /* Page heading, top-left of the page */
+    h1 {
+      font-weight: bold;
+      margin: 16px;
+    }
+
+    /* The container holds the image + the 4 corner texts.
+       position: relative makes it the "frame of reference"
+       for the absolutely-positioned texts inside it. */
+    .container {
+      position: relative;
+
+      /* Responsive: shrinks with the page but never wider than this. */
+      max-width: 400px;
+      width: 100%;
+
+      /* margin: auto  ->  centers the container horizontally on the page */
+      margin: auto;
+    }
+
+    /* The image fills the container width and scales with it.
+       display: block removes the tiny gap browsers add under images. */
+    .container img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Each label is absolute -> positioned against the container's edges.
+       Since those edges scale with the image, the texts STAY in the
+       corners when the image is resized. */
+    .corner {
+      position: absolute;
+      color: #000000;
+      font-size: 13px;
+      padding: 2px 4px;
+    }
+
+    .top-left     { top: 0;    left: 0;  }
+    .top-right    { top: 0;    right: 0; }
+    .bottom-left  { bottom: 0; left: 0;  }
+    .bottom-right { bottom: 0; right: 0; }
+  </style>
+</head>
+<body>
+  <h1>Texts on Image!</h1>
+
+  <div class="container">
+    <!-- This image is embedded directly in the file, so it ALWAYS loads
+         (no internet needed). To use your own photo, just replace the
+         whole src with e.g.  src="cat.jpg"  (a file next to this one). -->
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDUwIiB2aWV3Qm94PSIwIDAgNjAwIDQ1MCI+CiAgPHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0NTAiIGZpbGw9IiNlOWU3ZTAiLz4KICA8cmVjdCB4PSIxNTAiIHk9IjEyMCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIyMDAiIHJ4PSIxMCIgZmlsbD0iI2NmZDZkMyIvPgogIDxjaXJjbGUgY3g9IjIyNSIgY3k9IjE4MCIgcj0iMjYiIGZpbGw9IiNlN2I2NWEiLz4KICA8cGF0aCBkPSJNMTUwIDMyMCBMMjUwIDIyMCBMMzIwIDI5MCBMMzkwIDIxMCBMNDUwIDMyMCBaIiBmaWxsPSIjOWJiMGEzIi8+CiAgPHRleHQgeD0iMzAwIiB5PSIzNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIyMiIgZmlsbD0iIzZiNmI2YiI+U2FtcGxlIGltYWdlPC90ZXh0PgogIDx0ZXh0IHg9IjMwMCIgeT0iMzk4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiM4YThhOGEiPihyZXBsYWNlIHRoZSBzcmMgd2l0aCB5b3VyIG93biBwaG90byk8L3RleHQ+Cjwvc3ZnPgo=" alt="An image">
+
+    <span class="corner top-left">Top-Left</span>
+    <span class="corner top-right">Top-Right</span>
+    <span class="corner bottom-left">Bottom-Left</span>
+    <span class="corner bottom-right">Bottom-Right</span>
+  </div>
+</body>
+</html>

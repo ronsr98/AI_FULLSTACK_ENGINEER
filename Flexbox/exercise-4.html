@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox - Exercise 4</title>
+  <style>
+    body { font-family: Georgia, "Times New Roman", serif; margin: 20px; }
+
+    .wrapper {
+      display: flex;
+      border: 3px solid #e18683;
+      height: 620px;
+    }
+
+    /* Narrow left column. The bars are pushed to the BOTTOM and
+       aligned to the LEFT using a nested flex column. */
+    .left {
+      flex: 1;                       /* takes 1 share of the width  */
+      border-right: 3px solid #e18683;
+      display: flex;
+      flex-direction: column;        /* stack the bars vertically   */
+      justify-content: flex-end;     /* push them to the bottom      */
+      align-items: flex-start;       /* keep them on the left        */
+      gap: 10px;
+      padding: 16px;
+    }
+
+    .bar {
+      background-color: #e18683;
+      height: 18px;
+      width: 150px;
+    }
+    .bar.short { width: 85px; }      /* the last bar is shorter */
+
+    /* Wide right column with vertically-centered text. */
+    .right {
+      flex: 3;                       /* takes 3 shares  ->  3x wider */
+      display: flex;
+      align-items: center;           /* vertical centering */
+      padding: 0 45px;
+    }
+    .right p { margin: 0; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="left">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar short"></div>
+    </div>
+    <div class="right">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+  </div>
+</body>
+</html>

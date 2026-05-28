@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positioning - Exercise 3</title>
+  <style>
+    /* The purple box is the parent / frame of reference. */
+    .background {
+      position: relative;
+      width: 320px;
+      height: 165px;
+      background-color: #8179e0;
+      border-radius: 8px;
+    }
+
+    /* Both labels are absolute, anchored to opposite corners. */
+    .text {
+      position: absolute;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 15px;
+    }
+    #money { top: 8px;    left: 10px;  }   /* top-left    */
+    #time  { bottom: 8px; right: 10px; }   /* bottom-right */
+
+    /* Every bar is absolute and glued to the BOTTOM (bottom: 0),
+       so different heights all grow upward from the same baseline. */
+    .bar {
+      position: absolute;
+      bottom: 0;
+      width: 28px;
+      background-color: #b9bcc0;
+    }
+
+    /* Each bar: its own left offset (spread across) + its own height. */
+    #bar-1 { left: 16px;  height: 35px;  }
+    #bar-2 { left: 60px;  height: 75px;  }
+    #bar-3 { left: 104px; height: 120px; }
+    #bar-4 { left: 148px; height: 105px; }
+    #bar-5 { left: 192px; height: 80px;  }
+    #bar-6 { left: 236px; height: 50px;  }
+  </style>
+</head>
+<body>
+  <div class="background">
+    <div class="text" id="money">Money</div>
+    <div class="text" id="time">Time</div>
+    <div class="bar" id="bar-1"></div>
+    <div class="bar" id="bar-2"></div>
+    <div class="bar" id="bar-3"></div>
+    <div class="bar" id="bar-4"></div>
+    <div class="bar" id="bar-5"></div>
+    <div class="bar" id="bar-6"></div>
+  </div>
+</body>
+</html>
