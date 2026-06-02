@@ -1,17 +1,36 @@
-# boot-camp-elevation
+# AI Fullstack Engineer — Course Homework
 
-All the boot-camp homework — מאורגן לפי נושאים, תיקייה לכל נושא.
+כל תרגילי הבית מקורס **Fullstack AI Engineer**, מאורגנים לפי מודולים.
 
-## תיקיות
-| תיקייה | תוכן |
-|--------|------|
-| `HTML basics` | 5 תרגילי HTML: דף היכרות, רשימות, פורטפוליו, טבלה, טופס |
-| `CSS basics` | 8 תרגילי CSS: עיצוב טקסט, קישורים, טבלאות, מתכון ועוד |
-| `CSS Calc` | תרגילי `calc()` — חלוקת רוחב |
-| `CSS Box Model` | ריבוע לבדיקת ה‑box model |
-| `CSS Position` | מיקום עם `position: absolute` |
-| `Flexbox` | תרגילי flexbox (Froggy + בנייה לפי תמונות) |
-| `Layout` | פריסות: Holy Grail, סרגל ניווט, וטופס |
-| `Responsive Design` | 6 תרגילים: תיבה, טיפוגרפיה, גלריה, Holy Grail רספונסיבי, כרטיס מוצר (+בונוס Tailwind) |
+## מודולים
+
+| מודול | נושא | תוכן |
+|-------|------|------|
+| [`Module 1 - CSS`](./Module%201%20-%20CSS) | HTML & CSS | HTML basics, CSS basics, Calc, Box Model, Position, Flexbox, Layout, Responsive Design |
+| [`Module 2 - JavaScript`](./Module%202%20-%20JavaScript) | JavaScript Basics | משתנים ואופרטורים, תנאים, מערכים, אובייקטים, לולאות, פונקציות |
+
+כל מודול מכיל README משלו עם פירוט התרגילים והוראות הרצה.
+
+## מבנה
+
+```
+.
+├── Module 1 - CSS/          # תרגילי HTML/CSS — נפתחים בדפדפן
+│   ├── HTML basics/
+│   ├── CSS basics/
+│   ├── CSS Calc/
+│   ├── CSS Box Model/
+│   ├── CSS Position/
+│   ├── Flexbox/
+│   ├── Layout/
+│   └── Responsive Design/
+└── Module 2 - JavaScript/   # סקריפטים שרצים עם Node
+    ├── 01 - Variables & Operators/
+    ├── 02 - Conditionals/
+    ├── 03 - Arrays/
+    ├── 04 - Objects/
+    ├── 05 - Loops/
+    └── 06 - Functions/
+```
 
 נבנה כחלק מקורס **Fullstack AI Engineer**.
