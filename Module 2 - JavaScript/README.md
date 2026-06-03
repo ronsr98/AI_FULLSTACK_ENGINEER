@@ -35,11 +35,4 @@ node "09 - JS this/js-this.js"
 
 > הערה: ב‑`08 - Array Methods` שני תרגילים (9 ו‑10) מחזירים תוצאה שונה מ"הפלט הצפוי" שמופיע בחומר הקורס — הקוד נכון מתמטית, והפער מצוין בהערות בתוך הקובץ.
 
-## העמקה
-
-`Deep Dive - JavaScript/` — מדריך עומק עצמאי שלוקח מעבר לחומר הקורס: value vs reference, hoisting/TDZ, closures, `this` לעומק, reduce, coercion, prototypes, ו‑async + event loop. כולל `playground.js` שאפשר להריץ:
-```bash
-node "Deep Dive - JavaScript/playground.js"
-```
-
 נבנה כחלק מקורס **Fullstack AI Engineer**.
