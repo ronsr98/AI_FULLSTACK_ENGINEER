@@ -16,6 +16,10 @@
 | `07 - Callbacks & Arrow Functions` | Callbacks ופונקציות חץ         | pushPull, getTime, callback חסר, sum, capitalize, commentOnWeather |
 | `08 - Array Methods`            | מתודות מערך (ES6)                 | map / filter / find / every / forEach / reduce על נתוני משתמשים + inventory, ציונים, עגלת קניות |
 | `09 - JS this`                  | המילה השמורה `this`              | תיקון שגיאות `this`, stealCoins, makeDrink ללא תנאים מקוננים + Extensions של בית קפה |
+| `11 - Closures & Modules`       | Closures ו‑Modules               | StringFormatter, Bank (משתנה פרטי), SongsManager (module pattern) |
+| `12 - Algo Practice`            | תרגול אלגוריתמי                  | 52 בעיות (Easy/Medium/Hard/Very_Hard) עם בדיקות Jest — כולן עוברות |
+
+> נושא ה‑Scope תורגל בנפרד (ניתוח עצמי) ואינו דורש הגשת קובץ.
 
 ## איך מריצים
 
@@ -31,6 +35,16 @@ node "06 - Functions/functions-exercises.js"
 node "07 - Callbacks & Arrow Functions/callbacks-arrow.js"
 node "08 - Array Methods/array-methods.js"
 node "09 - JS this/js-this.js"
+node "11 - Closures & Modules/closures-modules.js"
+```
+
+תרגול ה‑Algo (`12 - Algo Practice`) רץ עם Jest:
+
+```bash
+cd "12 - Algo Practice"
+npm install
+npx jest                      # כל הבעיות
+npm run test-sudokuValidator  # בעיה בודדת
 ```
 
 > הערה: ב‑`08 - Array Methods` שני תרגילים (9 ו‑10) מחזירים תוצאה שונה מ"הפלט הצפוי" שמופיע בחומר הקורס — הקוד נכון מתמטית, והפער מצוין בהערות בתוך הקובץ.
