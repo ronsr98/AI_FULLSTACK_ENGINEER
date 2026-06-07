@@ -18,8 +18,11 @@
 | `09 - JS this`                  | המילה השמורה `this`              | תיקון שגיאות `this`, stealCoins, makeDrink ללא תנאים מקוננים + Extensions של בית קפה |
 | `11 - Closures & Modules`       | Closures ו‑Modules               | StringFormatter, Bank (משתנה פרטי), SongsManager (module pattern) |
 | `12 - Algo Practice`            | תרגול אלגוריתמי                  | 52 בעיות (Easy/Medium/Hard/Very_Hard) עם בדיקות Jest — כולן עוברות |
+| `13 - Data Structures`          | מבני נתונים                      | `UniqueArray` (exists ב‑O(1), תומך גם באובייקטים) |
+| `14 - Big O`                    | סיבוכיות זמן                     | ניתוח סיבוכיות + findDuplicates O(n), lookup O(1), binary search O(log n) |
+| `15 - Matrices`                 | מטריצות                          | `Matrix`, `EmployeeMatrix`, `TicTacToe` (repo עם המחלקות ב‑`src/`) |
 
-> נושא ה‑Scope תורגל בנפרד (ניתוח עצמי) ואינו דורש הגשת קובץ.
+> נושאי ה‑Scope וה‑Quizzes תורגלו בנפרד (ניתוח עצמי / טופס) ואינם דורשים הגשת קובץ.
 
 ## איך מריצים
 
@@ -36,6 +39,8 @@ node "07 - Callbacks & Arrow Functions/callbacks-arrow.js"
 node "08 - Array Methods/array-methods.js"
 node "09 - JS this/js-this.js"
 node "11 - Closures & Modules/closures-modules.js"
+node "13 - Data Structures/data-structures.js"
+node "14 - Big O/big-o.js"
 ```
 
 תרגול ה‑Algo (`12 - Algo Practice`) רץ עם Jest:
