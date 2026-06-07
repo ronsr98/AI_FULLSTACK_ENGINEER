@@ -21,6 +21,8 @@
 | `13 - Data Structures`          | מבני נתונים                      | `UniqueArray` (exists ב‑O(1), תומך גם באובייקטים) |
 | `14 - Big O`                    | סיבוכיות זמן                     | ניתוח סיבוכיות + findDuplicates O(n), lookup O(1), binary search O(log n) |
 | `15 - Matrices`                 | מטריצות                          | `Matrix`, `EmployeeMatrix`, `TicTacToe` (repo עם המחלקות ב‑`src/`) |
+| `16 - Recursion`                | רקורסיה                          | findFactorial, reverseString, swap (repo עם הקוד ב‑`src/app.js`) |
+| `17 - Trees & BST`              | עצים ועצי חיפוש בינ׳             | `BSNode` — insertNode, findNode, findCommonParent, removeNode |
 
 > נושאי ה‑Scope וה‑Quizzes תורגלו בנפרד (ניתוח עצמי / טופס) ואינם דורשים הגשת קובץ.
 
@@ -41,6 +43,7 @@ node "09 - JS this/js-this.js"
 node "11 - Closures & Modules/closures-modules.js"
 node "13 - Data Structures/data-structures.js"
 node "14 - Big O/big-o.js"
+node "17 - Trees & BST/bst.js"
 ```
 
 תרגול ה‑Algo (`12 - Algo Practice`) רץ עם Jest:
