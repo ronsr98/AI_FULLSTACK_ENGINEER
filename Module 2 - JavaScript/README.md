@@ -23,8 +23,11 @@
 | `15 - Matrices`                 | מטריצות                          | `Matrix`, `EmployeeMatrix`, `TicTacToe` (repo עם המחלקות ב‑`src/`) |
 | `16 - Recursion`                | רקורסיה                          | findFactorial, reverseString, swap (repo עם הקוד ב‑`src/app.js`) |
 | `17 - Trees & BST`              | עצים ועצי חיפוש בינ׳             | `BSNode` — insertNode, findNode, findCommonParent, removeNode |
+| `18 - Error Handling`           | טיפול בשגיאות                    | `safeJsonParse` (try/catch), `readFileWithErrorHandling` (שגיאות fs לפי קוד) |
+| `19 - Git Branches`             | ענפים ב‑git                      | תרגול 14 הצעדים — `commands.md` עם כל הפקודות |
+| `20 - Git Collaboration`        | עבודה משותפת ב‑git               | החלק שלי (Partner B): שרת Express עם `/message` + README וקישור לריפו המשותף |
 
-> נושאי ה‑Scope וה‑Quizzes תורגלו בנפרד (ניתוח עצמי / טופס) ואינם דורשים הגשת קובץ.
+> נושאי ה‑Scope, ה‑Quizzes, ו‑GitHub Projects תורגלו בנפרד (ניתוח עצמי / טופס / פעולה ב‑GitHub) ואינם דורשים הגשת קובץ.
 
 ## איך מריצים
 
