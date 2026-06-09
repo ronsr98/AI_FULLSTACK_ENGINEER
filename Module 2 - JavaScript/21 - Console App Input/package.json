@@ -1,0 +1,8 @@
+{
+  "name": "console-app-input",
+  "version": "1.0.0",
+  "description": "Console app input exercises (process.argv, prompt-sync, readline)",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}

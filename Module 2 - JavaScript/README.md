@@ -26,6 +26,7 @@
 | `18 - Error Handling`           | טיפול בשגיאות                    | `safeJsonParse` (try/catch), `readFileWithErrorHandling` (שגיאות fs לפי קוד) |
 | `19 - Git Branches`             | ענפים ב‑git                      | תרגול 14 הצעדים — `commands.md` עם כל הפקודות |
 | `20 - Git Collaboration`        | עבודה משותפת ב‑git               | החלק שלי (Partner B): שרת Express עם `/message` + README וקישור לריפו המשותף |
+| `21 - Console App Input`        | קלט באפליקציית קונסול           | calculator (`process.argv`), quiz (`prompt-sync`), registration (`readline`), banking (תפריט) |
 
 > נושאי ה‑Scope, ה‑Quizzes, ו‑GitHub Projects תורגלו בנפרד (ניתוח עצמי / טופס / פעולה ב‑GitHub) ואינם דורשים הגשת קובץ.
 
