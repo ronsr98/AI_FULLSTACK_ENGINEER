@@ -27,6 +27,7 @@
 | `19 - Git Branches`             | ענפים ב‑git                      | תרגול 14 הצעדים — `commands.md` עם כל הפקודות |
 | `20 - Git Collaboration`        | עבודה משותפת ב‑git               | החלק שלי (Partner B): שרת Express עם `/message` + README וקישור לריפו המשותף |
 | `21 - Console App Input`        | קלט באפליקציית קונסול           | calculator (`process.argv`), quiz (`prompt-sync`), registration (`readline`), banking (תפריט) |
+| `22 - Pair Exercise - Contact Manager` | תרגיל זוגי — מנהל אנשי קשר | CLI עם error handling, מבנה מודולרי (utils/services/commands), custom errors |
 
 > נושאי ה‑Scope, ה‑Quizzes, ו‑GitHub Projects תורגלו בנפרד (ניתוח עצמי / טופס / פעולה ב‑GitHub) ואינם דורשים הגשת קובץ.
 
