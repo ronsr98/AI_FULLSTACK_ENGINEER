@@ -28,8 +28,14 @@
 | `20 - Git Collaboration`        | עבודה משותפת ב‑git               | החלק שלי (Partner B): שרת Express עם `/message` + README וקישור לריפו המשותף |
 | `21 - Console App Input`        | קלט באפליקציית קונסול           | calculator (`process.argv`), quiz (`prompt-sync`), registration (`readline`), banking (תפריט) |
 | `22 - Pair Exercise - Contact Manager` | תרגיל זוגי — מנהל אנשי קשר | CLI עם error handling, מבנה מודולרי (utils/services/commands), custom errors |
+| `23 - OOP Inheritance`          | ירושה ב‑OOP                      | `Person` עם `Student`/`Teacher`/`Principal` (extends, super) |
+| `24 - OOP Basics`               | יסודות OOP (OfficeChallenge)     | Document/Employee/Manager/Cleaner/Office — כל בדיקות Jasmine עוברות |
+| `25 - Data Flow`                | זרימת נתונים                     | render מתוך מקור אמת יחיד (posts) + jQuery |
+| `26 - Unit Testing with Jest`   | בדיקות יחידה                     | מחלקת `Exercises` + 16 טסטים עוברים (כולל TDD ו‑spy) |
+| `27 - AutoComplete Trie`        | פרויקט Trie                      | מחלקת Trie (addWord/findWord/predictWords) + console + טסטים |
+| `28 - DOM & Events`             | DOM ואירועים                    | reservations, visual overload, form validation, ball game |
 
-> נושאי ה‑Scope, ה‑Quizzes, ו‑GitHub Projects תורגלו בנפרד (ניתוח עצמי / טופס / פעולה ב‑GitHub) ואינם דורשים הגשת קובץ.
+> נושאי ה‑Scope, ה‑Quizzes, Web Debugger, ו‑GitHub Projects תורגלו בנפרד (ניתוח עצמי / טופס / וידאו / פעולה ב‑GitHub) ואינם דורשים הגשת קובץ.
 
 ## איך מריצים
 
