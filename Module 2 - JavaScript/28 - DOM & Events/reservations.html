@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservations</title>
+  <style>
+    body { font-family: sans-serif; max-width: 420px; margin: 40px auto; }
+    input, button { padding: 8px; font-size: 16px; }
+    #result { margin-top: 16px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Reservations</h1>
+  <input id="name" type="text" placeholder="Your name">
+  <button id="check">Check reservation</button>
+  <div id="result"></div>
+
+  <script>
+    const reservations = {
+      Bob: { claimed: false },
+      Ted: { claimed: true }
+    };
+
+    function checkReservation() {
+      const name = document.getElementById("name").value; // use .value for inputs
+      const result = document.getElementById("result");
+      const reservation = reservations[name];
+
+      if (!reservation) {
+        result.textContent = "You have no reservation";
+      } else if (reservation.claimed) {
+        result.textContent = "Hmm, someone already claimed this reservation";
+      } else {
+        reservation.claimed = true;
+        result.textContent = "Welcome, " + name;
+      }
+    }
+
+    document.getElementById("check").addEventListener("click", checkReservation);
+  </script>
+</body>
+</html>

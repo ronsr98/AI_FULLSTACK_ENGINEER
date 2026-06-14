@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ball Game</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; }
+    #field { position: relative; width: 400px; height: 400px; border: 2px solid #333; margin: 20px auto; }
+    #ball { position: absolute; width: 30px; height: 30px; border-radius: 50%; background: #e74c3c; top: 185px; left: 185px; }
+    .arrows { display: inline-grid; grid-template-columns: repeat(3, 50px); gap: 4px; }
+    .arrow { padding: 10px; border: 1px solid #333; cursor: pointer; user-select: none; }
+    .empty { border: none; }
+  </style>
+</head>
+<body>
+  <h1>Move the ball (arrow buttons or keyboard)</h1>
+
+  <div id="field"><div id="ball"></div></div>
+
+  <div class="arrows">
+    <div class="empty"></div>
+    <div class="arrow" id="up">↑</div>
+    <div class="empty"></div>
+    <div class="arrow" id="left">←</div>
+    <div class="empty"></div>
+    <div class="arrow" id="right">→</div>
+    <div class="empty"></div>
+    <div class="arrow" id="down">↓</div>
+    <div class="empty"></div>
+  </div>
+
+  <script>
+    const ball = document.getElementById("ball");
+    const STEP = 20;
+
+    function move(direction) {
+      const top = ball.offsetTop;
+      const left = ball.offsetLeft;
+      if (direction === "up") ball.style.top = top - STEP + "px";
+      if (direction === "down") ball.style.top = top + STEP + "px";
+      if (direction === "left") ball.style.left = left - STEP + "px";
+      if (direction === "right") ball.style.left = left + STEP + "px";
+    }
+
+    // Exercise 1 - click events on the arrow divs
+    document.getElementById("up").addEventListener("click", () => move("up"));
+    document.getElementById("down").addEventListener("click", () => move("down"));
+    document.getElementById("left").addEventListener("click", () => move("left"));
+    document.getElementById("right").addEventListener("click", () => move("right"));
+
+    // Extension 3 - keyboard control
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowUp") move("up");
+      if (e.key === "ArrowDown") move("down");
+      if (e.key === "ArrowLeft") move("left");
+      if (e.key === "ArrowRight") move("right");
+    });
+  </script>
+</body>
+</html>
