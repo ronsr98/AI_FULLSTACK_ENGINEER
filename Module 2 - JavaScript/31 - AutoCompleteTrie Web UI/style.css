@@ -1,0 +1,56 @@
+body {
+  font-family: sans-serif;
+  max-width: 480px;
+  margin: 40px auto;
+}
+
+h1 { text-align: center; }
+
+.search-wrap {
+  position: relative; /* so the suggestions can be absolutely positioned */
+}
+
+#wordInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+#addBtn {
+  margin-top: 8px;
+  padding: 8px 16px;
+}
+
+/* the suggestions box overlays the content below instead of pushing it down */
+#suggestions {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  right: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+#suggestions li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#suggestions li:hover {
+  background: #f0f4f8;
+}
+
+#suggestions li.no-match {
+  color: #999;
+  cursor: default;
+}
+
+#message { min-height: 20px; font-weight: bold; }
+#dictionary { margin-top: 20px; color: #333; }

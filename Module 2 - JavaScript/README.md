@@ -34,6 +34,9 @@
 | `26 - Unit Testing with Jest`   | בדיקות יחידה                     | מחלקת `Exercises` + 16 טסטים עוברים (כולל TDD ו‑spy) |
 | `27 - AutoComplete Trie`        | פרויקט Trie                      | מחלקת Trie (addWord/findWord/predictWords) + console + טסטים |
 | `28 - DOM & Events`             | DOM ואירועים                    | reservations, visual overload, form validation, ball game |
+| `29 - Promises`                 | Promises                        | checkLuckyNumber, עיבוד קבצים עם `Promise.all`, checkout משורשר |
+| `30 - AJAX & APIs`              | בקשות ל‑APIs                    | Google Books (`fetchBook`) + מחולל GIF של GIPHY |
+| `31 - AutoCompleteTrie Web UI`  | ממשק web ל‑Trie                 | הוספת מילים, הצעות חיות (dropdown), טיפול בשגיאות |
 
 > נושאי ה‑Scope, ה‑Quizzes, Web Debugger, ו‑GitHub Projects תורגלו בנפרד (ניתוח עצמי / טופס / וידאו / פעולה ב‑GitHub) ואינם דורשים הגשת קובץ.
 
