@@ -39,6 +39,7 @@
 | `31 - AutoCompleteTrie Web UI`  | ממשק web ל‑Trie                 | הוספת מילים, הצעות חיות (dropdown), טיפול בשגיאות |
 | `32 - Tweeter Project`          | פרויקט MVC (Twitter מוקטן)      | model/render/main מופרדים — פוסטים, תגובות, מחיקה |
 | `33 - Local Storage`            | אחסון מקומי                     | אפליקציית "wisdom" — שמירה/טעינה מ‑localStorage |
+| `34 - Async Await`             | async/await                    | המרה ל-async/await, user+posts, dashboard מקבילי (Promise.all) |
 
 > נושאי ה‑Scope, ה‑Quizzes, Web Debugger, ו‑GitHub Projects תורגלו בנפרד (ניתוח עצמי / טופס / וידאו / פעולה ב‑GitHub) ואינם דורשים הגשת קובץ.
 
