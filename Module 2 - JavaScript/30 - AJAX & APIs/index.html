@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GIF Generator (GIPHY API)</title>
+  <style>
+    body { font-family: sans-serif; max-width: 480px; margin: 40px auto; text-align: center; }
+    input { padding: 8px; width: 60%; }
+    button { padding: 8px 14px; }
+    #gif { margin-top: 20px; }
+    iframe { border: none; max-width: 100%; }
+  </style>
+</head>
+<body>
+  <h1>GIF Generator</h1>
+  <input id="query" type="text" placeholder="Search for a gif...">
+  <button id="search">Search</button>
+  <div id="gif"></div>
+
+  <script src="giphy.js"></script>
+</body>
+</html>
