@@ -1,0 +1,199 @@
+/* ---------- Tokens ---------- */
+:root {
+  --bg: #0b0b14;
+  --text: #e7e7ef;
+  --muted: #9aa0b4;
+  --card: rgba(255, 255, 255, 0.055);
+  --card-border: rgba(255, 255, 255, 0.11);
+  --accent: linear-gradient(120deg, #ec4899, #8b5cf6 55%, #22d3ee);
+  --radius: 22px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+  padding-bottom: 70px;
+  overflow-x: hidden;
+}
+
+/* animated mesh-gradient glow behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  background:
+    radial-gradient(40% 40% at 15% 20%, rgba(139, 92, 246, 0.55), transparent 60%),
+    radial-gradient(40% 40% at 85% 15%, rgba(236, 72, 153, 0.50), transparent 60%),
+    radial-gradient(45% 45% at 75% 80%, rgba(34, 211, 238, 0.40), transparent 60%),
+    radial-gradient(40% 40% at 20% 85%, rgba(245, 158, 11, 0.30), transparent 60%);
+  filter: blur(20px);
+  animation: drift 18s ease-in-out infinite alternate;
+}
+@keyframes drift {
+  from { transform: translate(-3%, -2%) scale(1); }
+  to { transform: translate(3%, 2%) scale(1.08); }
+}
+
+/* ---------- Controls ---------- */
+.controls {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap; padding: 14px 24px;
+  background: rgba(11, 11, 20, 0.55);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--card-border);
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand h1 {
+  font-size: 24px; font-weight: 800; letter-spacing: 2px;
+  background: var(--accent); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.pokeball {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: linear-gradient(#ef4444 0 50%, #fff 50% 100%);
+  border: 2.5px solid #0b0b14; position: relative;
+  box-shadow: 0 0 14px rgba(236, 72, 153, 0.6);
+}
+.pokeball::after {
+  content: ""; position: absolute; top: 50%; left: 50%;
+  width: 8px; height: 8px; background: #fff; border: 2.5px solid #0b0b14;
+  border-radius: 50%; transform: translate(-50%, -50%);
+}
+.buttons { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.btn {
+  font-family: inherit; font-size: 14px; font-weight: 600;
+  padding: 10px 18px; border-radius: 999px;
+  border: 1px solid var(--card-border); background: rgba(255, 255, 255, 0.06);
+  color: var(--text); cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.12); }
+.btn-primary {
+  border: none; color: #fff; background: var(--accent);
+  background-size: 160% 160%; box-shadow: 0 8px 24px rgba(139, 92, 246, 0.45);
+  animation: glow 6s ease infinite;
+}
+@keyframes glow { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+.select {
+  font-family: inherit; font-size: 14px; padding: 10px 14px; border-radius: 999px;
+  border: 1px solid var(--card-border); background: rgba(255, 255, 255, 0.06);
+  color: var(--text); cursor: pointer;
+}
+.select option { background: #14141f; color: var(--text); }
+
+/* ---------- Page & cards ---------- */
+.page { max-width: 900px; margin: 30px auto; padding: 0 18px; }
+
+/* the frosted-glass card used for every section */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+  padding: 24px;
+}
+.card h3 {
+  font-size: 12px; text-transform: uppercase; letter-spacing: 2px;
+  color: var(--muted); margin-bottom: 14px;
+}
+.hidden { display: none; }
+
+/* ---------- Loading / error ---------- */
+.status { text-align: center; padding: 90px 20px; color: var(--muted); }
+.spinner {
+  width: 56px; height: 56px; margin: 0 auto 18px; border-radius: 50%;
+  background: linear-gradient(#ef4444 0 50%, #fff 50% 100%);
+  border: 4px solid #0b0b14; box-shadow: 0 0 22px rgba(236, 72, 153, 0.6);
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.error { font-size: 18px; font-weight: 600; color: #fda4af; }
+
+/* ---------- Profile ---------- */
+.profile { display: flex; flex-direction: column; gap: 22px; }
+/* staggered entrance */
+.profile > .card { animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.profile > .card:nth-child(2) { animation-delay: 0.06s; }
+.profile > .card:nth-child(3) { animation-delay: 0.12s; }
+.profile > .card:nth-child(4) { animation-delay: 0.18s; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+
+/* Hero */
+.hero { padding: 0 0 28px; overflow: hidden; text-align: center; }
+.cover { height: 160px; background: var(--accent); background-size: 200% 200%; animation: glow 8s ease infinite; }
+.avatar {
+  width: 138px; height: 138px; border-radius: 50%; object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.9); margin-top: -72px; background: #14141f;
+  box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.25), 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+.hero h2 { font-size: 28px; font-weight: 700; margin-top: 14px; color: #fff; }
+.location { color: var(--muted); margin-top: 4px; }
+
+/* Grid */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+.quote-card { position: relative; overflow: hidden; }
+.quote-card::before {
+  content: "\201C"; position: absolute; top: -18px; right: 10px;
+  font-size: 120px; line-height: 1; color: rgba(255, 255, 255, 0.06); font-family: Georgia, serif;
+}
+.quote-card blockquote { font-size: 18px; font-style: italic; line-height: 1.55; color: #f3f4f6; position: relative; }
+.quote-card cite { display: block; margin-top: 14px; color: var(--muted); font-weight: 600; }
+
+.pokemon-card { text-align: center; }
+.pokemon-frame {
+  position: relative; display: inline-block; padding: 12px; border-radius: 18px;
+  background: radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 70%);
+  border: 1px solid var(--card-border);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+.pokemon-frame img { width: 160px; height: 160px; object-fit: contain; filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.55)); }
+.pokemon-name {
+  display: block; margin-top: 12px; font-weight: 700; font-size: 22px;
+  background: var(--accent); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+/* shiny pokemon get a gold glow + the SHINY badge (my little pokemon touch) */
+.pokemon-frame.shiny {
+  background: radial-gradient(circle at 50% 38%, rgba(245, 197, 24, 0.30) 0%, rgba(245, 197, 24, 0.05) 70%);
+  border-color: rgba(245, 197, 24, 0.6);
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0%, 100% { box-shadow: 0 0 18px rgba(245, 197, 24, 0.45); }
+  50% { box-shadow: 0 0 38px rgba(245, 197, 24, 0.85); }
+}
+.shiny-badge {
+  position: absolute; top: 8px; right: 8px;
+  background: linear-gradient(120deg, #f5c518, #ff8f00); color: #1b1b1b;
+  font-size: 11px; font-weight: 800; letter-spacing: 0.5px;
+  padding: 4px 9px; border-radius: 999px; box-shadow: 0 3px 10px rgba(245, 197, 24, 0.5);
+}
+
+/* About */
+.about-card p { color: #cfd2e0; line-height: 1.75; white-space: pre-line; }
+
+/* Friends */
+.friends { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.friend {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  padding: 16px 8px; border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04); border: 1px solid var(--card-border);
+  transition: transform 0.18s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+.friend:hover { transform: translateY(-4px); background: rgba(255, 255, 255, 0.09); box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4); }
+.friend img { width: 68px; height: 68px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255, 255, 255, 0.15); }
+.friend span { font-size: 13px; font-weight: 600; text-align: center; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .grid { grid-template-columns: 1fr; }
+  .friends { grid-template-columns: repeat(2, 1fr); }
+  .controls { justify-content: center; }
+  .hero h2 { font-size: 24px; }
+}

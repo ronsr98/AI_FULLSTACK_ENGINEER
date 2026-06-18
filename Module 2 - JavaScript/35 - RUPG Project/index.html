@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RUPG — Random User Page Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Controls -->
+  <header class="controls">
+    <div class="brand">
+      <span class="pokeball"></span>
+      <h1>RUPG</h1>
+    </div>
+    <div class="buttons">
+      <button id="generate" class="btn btn-primary">✨ Generate</button>
+      <button id="save" class="btn">💾 Save</button>
+      <select id="saved-users" class="select"><option value="">No saved users</option></select>
+      <button id="load" class="btn">📂 Load</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- loading / error -->
+    <section id="status" class="status"></section>
+
+    <!-- profile -->
+    <section id="profile" class="profile hidden">
+      <!-- cover + main user -->
+      <div class="card hero">
+        <div class="cover"></div>
+        <img id="avatar" class="avatar" src="" alt="user">
+        <h2 id="full-name"></h2>
+        <p id="location" class="location"></p>
+      </div>
+
+      <div class="grid">
+        <!-- quote -->
+        <div class="card quote-card">
+          <h3>Status</h3>
+          <blockquote id="quote"></blockquote>
+          <cite>— Kanye West</cite>
+        </div>
+
+        <!-- pokemon -->
+        <div class="card pokemon-card">
+          <h3>Favorite Pokémon</h3>
+          <div id="pokemon-frame" class="pokemon-frame">
+            <span id="shiny-badge" class="shiny-badge hidden">✨ SHINY</span>
+            <img id="pokemon-img" src="" alt="pokemon">
+          </div>
+          <span id="pokemon-name" class="pokemon-name"></span>
+        </div>
+      </div>
+
+      <!-- about -->
+      <div class="card about-card">
+        <h3>About Me</h3>
+        <p id="about"></p>
+      </div>
+
+      <!-- friends -->
+      <div class="card friends-card">
+        <h3>Friends</h3>
+        <div id="friends" class="friends"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="services.js"></script>
+  <script src="storage.js"></script>
+  <script src="view.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

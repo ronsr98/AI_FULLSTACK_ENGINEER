@@ -40,6 +40,7 @@
 | `32 - Tweeter Project`          | פרויקט MVC (Twitter מוקטן)      | model/render/main מופרדים — פוסטים, תגובות, מחיקה |
 | `33 - Local Storage`            | אחסון מקומי                     | אפליקציית "wisdom" — שמירה/טעינה מ‑localStorage |
 | `34 - Async Await`             | async/await                    | המרה ל-async/await, user+posts, dashboard מקבילי (Promise.all) |
+| `35 - RUPG Project`            | מחולל דף משתמש אקראי (4 APIs)   | OOP מלא (Service/View/Storage/Controller) — randomuser, Kanye, Pokémon, Bacon |
 
 > נושאי ה‑Scope, ה‑Quizzes, Web Debugger, ו‑GitHub Projects תורגלו בנפרד (ניתוח עצמי / טופס / וידאו / פעולה ב‑GitHub) ואינם דורשים הגשת קובץ.
 
