@@ -1,5 +1,6 @@
-// MODEL - all data logic for Tweeter. Knows nothing about the UI.
+// MODEL - all the data logic for Tweeter. Doesn't know anything about the UI.
 const Tweeter = function () {
+  // starting dummy data
   const posts = [
     {
       text: "First post!",
@@ -21,8 +22,9 @@ const Tweeter = function () {
     },
   ];
 
-  let postIdCounter = 2; // p1, p2 already exist
-  let commentIdCounter = 6; // c1..c6 already exist
+  // counters so new ids keep going up (p3, p4... and c7, c8...)
+  let postIdCounter = 2;
+  let commentIdCounter = 6;
 
   const getPosts = () => posts;
 
@@ -38,21 +40,17 @@ const Tweeter = function () {
 
   const addComment = (postID, text) => {
     const post = posts.find((p) => p.id === postID);
-    if (post) {
-      commentIdCounter++;
-      post.comments.push({ id: "c" + commentIdCounter, text });
-    }
+    if (!post) return;
+    commentIdCounter++;
+    post.comments.push({ id: "c" + commentIdCounter, text });
   };
 
   const removeComment = (postID, commentID) => {
     const post = posts.find((p) => p.id === postID);
-    if (post) {
-      const index = post.comments.findIndex((c) => c.id === commentID);
-      if (index !== -1) post.comments.splice(index, 1);
-    }
+    if (!post) return;
+    const index = post.comments.findIndex((c) => c.id === commentID);
+    if (index !== -1) post.comments.splice(index, 1);
   };
 
   return { getPosts, addPost, removePost, addComment, removeComment };
 };
-
-if (typeof module !== "undefined") module.exports = Tweeter;

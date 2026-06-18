@@ -2,18 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tweeter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Tweeter</h1>
+  <main class="app">
+    <h1 class="logo">🐦 Tweeter</h1>
 
-  <div id="new-post">
-    <input id="input" type="text" placeholder="What's happening?">
-    <button id="twit">Twit</button>
-  </div>
+    <!-- compose box -->
+    <div class="compose">
+      <input id="input" type="text" placeholder="What's happening?">
+      <button id="twit">Twit</button>
+    </div>
 
-  <div id="posts"></div>
+    <!-- the feed (filled by the Renderer) -->
+    <div id="posts"></div>
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="model.js"></script>

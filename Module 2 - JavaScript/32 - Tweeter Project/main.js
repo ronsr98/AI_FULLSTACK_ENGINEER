@@ -1,46 +1,38 @@
-// CONTROLLER - connects Model and View, handles user events.
+// CONTROLLER - connects the model (Tweeter) and the view (Renderer), handles clicks.
 const tweeter = Tweeter();
 const renderer = Renderer();
 
-function refresh() {
-  renderer.renderPosts(tweeter.getPosts());
-}
+// the golden rule of data flow: change the data, then re-render from it
+const refresh = () => renderer.renderPosts(tweeter.getPosts());
 
-// New post (the main Twit button - a static element)
-$("#twit").on("click", function () {
-  const text = $("#input").val();
+// new post - the Twit button is static so a normal listener is fine
+$("#twit").on("click", () => {
+  const text = $("#input").val().trim();
   if (!text) return;
   tweeter.addPost(text);
   $("#input").val("");
   refresh();
 });
 
-// The following targets are created dynamically, so we use event delegation on #posts.
+// posts/comments are created dynamically, so we delegate these from #posts
 
-// Delete a post
 $("#posts").on("click", ".delete", function () {
-  const postID = $(this).data("id");
-  tweeter.removePost(postID);
+  tweeter.removePost($(this).data("id"));
   refresh();
 });
 
-// Add a comment
 $("#posts").on("click", ".comment-button", function () {
   const post = $(this).closest(".post");
-  const postID = post.data("id");
-  const text = post.find(".comment-input").val();
+  const text = post.find(".comment-input").val().trim();
   if (!text) return;
-  tweeter.addComment(postID, text);
+  tweeter.addComment(post.data("id"), text);
   refresh();
 });
 
-// Delete a comment
 $("#posts").on("click", ".delete-comment", function () {
   const postID = $(this).closest(".post").data("id");
-  const commentID = $(this).data("id");
-  tweeter.removeComment(postID, commentID);
+  tweeter.removeComment(postID, $(this).data("id"));
   refresh();
 });
 
-// initial render
-refresh();
+refresh(); // first render of the dummy data

@@ -1,29 +1,33 @@
-// VIEW - renders posts to the DOM. Knows nothing about data logic.
+// VIEW - turns the posts data into HTML. Only cares about rendering, nothing else.
 const Renderer = function () {
-  function commentHtml(comment) {
-    return `
-      <div class="comment" data-id="${comment.id}">
-        <span class="comment-text">${comment.text}</span>
-        <span class="delete-comment" data-id="${comment.id}">x</span>
-      </div>`;
-  }
+  // html for a single comment (with its little delete x)
+  const commentHtml = (comment) => `
+    <div class="comment" data-id="${comment.id}">
+      <span class="comment-text">${comment.text}</span>
+      <span class="delete-comment" data-id="${comment.id}">×</span>
+    </div>`;
 
-  function postHtml(post) {
-    const comments = post.comments.map(commentHtml).join("");
-    return `
-      <div class="post" data-id="${post.id}">
-        <div class="post-text">${post.text}</div>
-        <div class="delete" data-id="${post.id}">Delete Post</div>
-        <div class="comments">${comments}</div>
+  // html for one post: the text, a delete button, its comments, and an add-comment box
+  const postHtml = (post) => `
+    <div class="post" data-id="${post.id}">
+      <div class="post-top">
+        <p class="post-text">${post.text}</p>
+        <span class="delete" data-id="${post.id}">Delete</span>
+      </div>
+      <div class="comments">${post.comments.map(commentHtml).join("")}</div>
+      <div class="add-comment">
         <input type="text" placeholder="Got something to say?" class="comment-input">
         <button class="comment-button">Comment</button>
-      </div>`;
-  }
+      </div>
+    </div>`;
 
-  function renderPosts(posts) {
-    $("#posts").empty(); // clear first so we don't duplicate
-    posts.forEach((post) => $("#posts").append(postHtml(post)));
-  }
+  // wipe the feed and draw every post again, called after each change.
+  // i show newest first so a new post pops up on top, feels natural like real twitter.
+  // i reverse a copy so the real array order stays the same.
+  const renderPosts = (posts) => {
+    $("#posts").empty();
+    [...posts].reverse().forEach((post) => $("#posts").append(postHtml(post)));
+  };
 
   return { renderPosts };
 };
