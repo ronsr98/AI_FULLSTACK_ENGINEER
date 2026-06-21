@@ -41,6 +41,7 @@
 | `33 - Local Storage`            | אחסון מקומי                     | אפליקציית "wisdom" — שמירה/טעינה מ‑localStorage |
 | `34 - Async Await`             | async/await                    | המרה ל-async/await, user+posts, dashboard מקבילי (Promise.all) |
 | `35 - RUPG Project`            | מחולל דף משתמש אקראי (4 APIs)   | OOP מלא (Service/View/Storage/Controller) — randomuser, Kanye, Pokémon, Bacon |
+| `36 - Stock Exchange Project`  | אתר בורסה multipage (FMP API)  | OOP — חיפוש NASDAQ, פרופיל + גרף (Chart.js), marquee, השוואה; mock מובנה |
 
 > נושאי ה‑Scope, ה‑Quizzes, Web Debugger, ו‑GitHub Projects תורגלו בנפרד (ניתוח עצמי / טופס / וידאו / פעולה ב‑GitHub) ואינם דורשים הגשת קובץ.
 

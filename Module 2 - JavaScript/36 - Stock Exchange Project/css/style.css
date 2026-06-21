@@ -1,0 +1,144 @@
+/* ---- palette + base ---- */
+:root {
+  --navy: #1d3557;
+  --blue: #457b9d;
+  --teal: #2a9d8f;
+  --red: #e63946;
+  --gold: #e9c46a;
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --ink: #1a1a2e;
+  --muted: #6b7a8f;
+  --line: #e3e8f0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.page { max-width: 760px; margin: 0 auto; padding: 26px 18px 70px; }
+
+.title { font-size: 30px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+.subtitle { color: var(--muted); margin-bottom: 22px; }
+.back-link { display: inline-block; color: var(--blue); text-decoration: none; margin-bottom: 16px; font-weight: 600; }
+.back-link:hover { text-decoration: underline; }
+
+/* shared up/down colors for percentages */
+.up { color: var(--teal); font-weight: 700; }
+.down { color: var(--red); font-weight: 700; }
+
+/* states */
+.loading { color: var(--muted); padding: 24px; text-align: center; }
+.empty, .error { padding: 20px; text-align: center; color: var(--muted); }
+.error { color: var(--red); }
+
+/* ---- step 4/5: scrolling ticker ---- */
+/* the track is printed twice and slid left by 50%, so it loops forever with no jump. */
+.ticker {
+  background: var(--navy);
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 9px 0;
+}
+.ticker-track {
+  display: inline-block;
+  animation: scroll-left 32s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-item { margin: 0 26px; font-size: 14px; }
+.ticker-item b { color: var(--gold); }
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---- search box (step 6) ---- */
+.search-box { display: flex; gap: 10px; margin-bottom: 18px; }
+#search-input {
+  flex: 1; padding: 13px 16px; font-size: 16px;
+  border: 1px solid var(--line); border-radius: 12px; outline: none;
+  background: var(--card);
+}
+#search-input:focus { border-color: var(--blue); }
+#search-btn {
+  padding: 13px 26px; font-size: 15px; font-weight: 700; color: #fff;
+  background: var(--navy); border: none; border-radius: 12px; cursor: pointer;
+  transition: background .15s ease;
+}
+#search-btn:hover { background: var(--blue); }
+
+/* ---- results list (steps 3, 7, 8) ---- */
+.result {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 12px 16px; margin-bottom: 10px; text-decoration: none; color: var(--ink);
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+.result:hover { box-shadow: 0 8px 22px rgba(29, 53, 87, 0.1); transform: translateY(-1px); }
+.result-logo { width: 40px; height: 40px; object-fit: contain; border-radius: 8px; background: #fff; }
+.result-main { flex: 1; min-width: 0; }
+.result-name { font-weight: 700; }
+.result-symbol { color: var(--muted); font-size: 13px; }
+.result-change { font-size: 14px; min-width: 70px; text-align: right; }
+/* step 7: highlight the matched text */
+mark { background: var(--gold); color: var(--ink); border-radius: 3px; padding: 0 2px; }
+
+.compare-add {
+  font-size: 13px; font-weight: 600; color: var(--blue);
+  background: #fff; border: 1px solid var(--blue); border-radius: 999px;
+  padding: 6px 12px; cursor: pointer; transition: background .15s ease, color .15s ease;
+}
+.compare-add:hover { background: var(--blue); color: #fff; }
+
+/* ---- compare bar above the title (step 10) ---- */
+.compare-bar {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+  background: #eaf0f8; border: 1px solid var(--line); border-radius: 12px;
+  padding: 10px 14px; margin-bottom: 16px;
+}
+.compare-label { font-weight: 700; color: var(--navy); }
+.chip {
+  font-weight: 600; color: var(--navy); background: #fff;
+  border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer;
+}
+.chip:hover { border-color: var(--red); color: var(--red); }
+.compare-go {
+  margin-left: auto; font-weight: 700; color: #fff; background: var(--teal);
+  border-radius: 999px; padding: 7px 16px; text-decoration: none;
+}
+.compare-go:hover { filter: brightness(1.05); }
+
+/* ---- company page (step 2/9) ---- */
+.company-head { display: flex; gap: 18px; align-items: center; margin-bottom: 16px; }
+.company-logo { width: 72px; height: 72px; object-fit: contain; border-radius: 12px; background: #fff; border: 1px solid var(--line); padding: 6px; }
+.company-name { font-size: 24px; color: var(--navy); }
+.company-symbol { font-size: 15px; color: var(--muted); font-weight: 600; }
+.company-price { font-size: 20px; font-weight: 700; margin: 4px 0; }
+.company-link { color: var(--blue); font-size: 14px; text-decoration: none; }
+.company-link:hover { text-decoration: underline; }
+.company-desc { color: #2b3640; margin: 14px 0 22px; }
+.chart-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.chart-card h3 { color: var(--navy); margin-bottom: 10px; font-size: 16px; }
+
+/* ---- compare page (step 11) ---- */
+.compare-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;
+}
+.compare-card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 20px; text-align: center;
+}
+.compare-card img { width: 56px; height: 56px; object-fit: contain; margin-bottom: 10px; }
+.compare-card h2 { font-size: 17px; color: var(--navy); }
+.compare-card .symbol { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+.compare-card .price { font-size: 22px; font-weight: 800; }
+.big-change { font-size: 15px; margin-top: 2px; }
+.mini-desc { font-size: 12.5px; color: var(--muted); margin: 12px 0; }
+.details-link { color: var(--blue); font-weight: 600; text-decoration: none; font-size: 14px; }
+.details-link:hover { text-decoration: underline; }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Exchange</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- step 4/5: scrolling ticker -->
+  <div id="marquee"></div>
+
+  <main class="page">
+    <!-- step 10: compare bar sits before the title -->
+    <div id="compare-bar"></div>
+
+    <h1 class="title">📈 Stock Exchange</h1>
+    <p class="subtitle">Search NASDAQ companies, view profiles and price history, and compare side by side.</p>
+
+    <!-- step 6: rendered by SearchForm / SearchResult classes -->
+    <div id="search"></div>
+    <div id="results"></div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/helpers.js"></script>
+  <script src="js/mock.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/Marquee.js"></script>
+  <script src="js/SearchForm.js"></script>
+  <script src="js/SearchResult.js"></script>
+  <script src="js/CompareList.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
