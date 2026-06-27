@@ -1,0 +1,9 @@
+.app {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+input, select {
+  margin: 4px;
+  padding: 4px;
+}

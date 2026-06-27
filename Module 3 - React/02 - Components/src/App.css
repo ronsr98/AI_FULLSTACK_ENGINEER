@@ -1,0 +1,14 @@
+.app {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.ex-space {
+  margin-bottom: 30px;
+}
+
+/* exercise 2 - lay the 500 spams out in a grid */
+#ex-2 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}

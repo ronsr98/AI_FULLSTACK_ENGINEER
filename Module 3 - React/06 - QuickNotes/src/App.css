@@ -1,0 +1,112 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f6f7fb;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #222;
+}
+
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ---- the add/edit form ---- */
+.note-form {
+  background: #fff;
+  border: 1px solid #e6e8ef;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.title-input,
+.text-input {
+  width: 100%;
+  border: 1px solid #dfe3ec;
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 15px;
+  font-family: inherit;
+  margin-bottom: 8px;
+  outline: none;
+  resize: none; /* we grow it ourselves (step 3.1) */
+  overflow: hidden;
+}
+.title-input:focus,
+.text-input:focus { border-color: #6c8cff; }
+.form-row { display: flex; gap: 8px; }
+.form-row select {
+  border: 1px solid #dfe3ec; border-radius: 8px; padding: 8px; font-family: inherit;
+}
+.form-row button {
+  margin-left: auto;
+  background: #6c8cff; color: #fff; border: none; border-radius: 8px;
+  padding: 9px 18px; font-weight: 600; cursor: pointer;
+}
+.form-row button:hover { background: #5577f0; }
+
+/* ---- search + filters ---- */
+.search-bar { margin-bottom: 16px; }
+.search-input {
+  width: 100%; border: 1px solid #dfe3ec; border-radius: 999px;
+  padding: 9px 16px; font-size: 14px; outline: none; margin-bottom: 10px;
+}
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.filters button {
+  border: 1px solid #dfe3ec; background: #fff; border-radius: 999px;
+  padding: 6px 14px; cursor: pointer; font-size: 13px;
+}
+.filters button.active { background: #222; color: #fff; border-color: #222; }
+
+/* ---- notes grid ---- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+.empty { text-align: center; color: #99a; margin-top: 30px; }
+
+.note {
+  border: 1px solid #e6e8ef;
+  border-radius: 12px;
+  padding: 14px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.note:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); }
+.note-title { margin: 0 0 6px; font-size: 16px; }
+.note-text { margin: 0 0 10px; white-space: pre-wrap; font-size: 14px; }
+.note-meta {
+  display: flex; flex-direction: column; gap: 2px;
+  font-size: 11px; color: #667;
+}
+.note-cat { font-weight: 700; }
+.delete-btn {
+  margin-top: 10px; background: transparent; border: 1px solid #e0707a;
+  color: #d23; border-radius: 8px; padding: 5px 10px; cursor: pointer; font-size: 12px;
+}
+.delete-btn:hover { background: #d23; color: #fff; }
+
+/* ---- modal ---- */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45);
+  display: flex; align-items: center; justify-content: center; padding: 16px;
+}
+.modal {
+  background: #fff; border-radius: 14px; padding: 22px;
+  width: 100%; max-width: 460px; position: relative;
+}
+.modal-close {
+  position: absolute; top: 10px; right: 12px;
+  border: none; background: none; font-size: 24px; cursor: pointer; color: #889;
+}
+.modal-dates { font-size: 12px; color: #778; margin: 0 0 4px; }

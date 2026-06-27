@@ -1,0 +1,30 @@
+.app {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.ex-space {
+  margin-bottom: 30px;
+}
+
+.ex-title {
+  margin-bottom: 8px;
+}
+
+/* exercise 2 - the weather box changes color by class */
+#weatherBox {
+  height: 300px;
+  width: 300px;
+}
+
+.freezing {
+  background-color: aqua;
+}
+
+.fair {
+  background-color: orange;
+}
+
+.hell-scape {
+  background-color: red;
+}
