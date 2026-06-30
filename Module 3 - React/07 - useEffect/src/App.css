@@ -1,0 +1,35 @@
+.app {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+/* exercise 2/3 - row by default, column on small screens */
+.posts {
+  display: flex;
+  gap: 14px;
+}
+.posts.row {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.posts.column {
+  flex-direction: column;
+}
+
+.post {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px;
+  flex: 1 1 220px;
+  background: #fafafa;
+}
+.post h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+.post p {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+}

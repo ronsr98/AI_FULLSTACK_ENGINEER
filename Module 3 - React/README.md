@@ -21,3 +21,5 @@ Then open the URL Vite prints (usually `http://localhost:5173`).
 | `04 - State` | State | `useState`, Hudini toggle, App→Landing/Home→Item, discounts |
 | `05 - Input` | Controlled Components | controlled inputs, `select`, reading values from state |
 | `06 - QuickNotes` | Project | full notes app: add/edit/delete, modal, categories, search, localStorage |
+| `07 - useEffect` | useEffect | ticking clock (with cleanup), fetch posts, switch layout on resize |
+| `08 - Data Flow` | Lifting State Up | image gallery, conversation app (state up, handlers down) |
